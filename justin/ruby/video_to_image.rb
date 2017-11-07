@@ -72,5 +72,7 @@ class VideoApplitoolsTester
   end
 end
 
+#example: ruby video_to_image.rb '/Users/justin/ImageTester.jar' 'https://applitools.com/images/videos/step2.mp4' 'Video Frames' 'Steps Example'
+
 my_test = VideoApplitoolsTester.new(ARGV[0], ARGV[1], ARGV[2], ARGV[3])
 my_test.run_test
