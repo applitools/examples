@@ -11,7 +11,7 @@
 # Dir.mkdir "frames" unless Dir.exists? "frames"
 #
 # %x(ffmpeg -i #{file_name} -vf \"select=eq(pict_type\\,I)" -vsync vfr frames/out-%03d.jpg -hide_banner)
-# %x(java -jar ../ImageTester.jar -k 9RkMajXrzS1Zu110oTWQps102CHiPRPmeyND99E9iL0G7yAc110 -a Video Frames -ap Steps Example -f frames)
+# %x(java -jar ../ImageTester.jar -k <api-key> -a Video Frames -ap Steps Example -f frames)
 #
 # FileUtils.rm_r "frames" if Dir.exists? "frames"
 
