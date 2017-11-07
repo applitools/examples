@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 24
     buildToolsVersion '25.0.3'
 
     defaultConfig {
         applicationId "com.example.applitools.testespressoscratch2"
         minSdkVersion 19
-        targetSdkVersion 23
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -26,16 +26,735 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestCompile('com.android.support.test.espresso:espresso-core:3.+', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:23.+'
+    compile 'com.android.support:appcompat-v7:24.+'
     compile 'junit:junit:4.12'
 
-    compile 'com.applitools:eyes-android-espresso:1.0.2@aar'
-    compile 'com.applitools:eyes-android-common:1.0.1'
-    compile 'com.applitools:eyes-android-core:1.0.1'
+    compile 'com.applitools:eyes-android-espresso:1.+@aar'
+    compile 'com.applitools:eyes-android-common:1.+'
+    compile 'com.applitools:eyes-android-core:1.+'
 
-    compile 'com.google.android.gms:play-services-maps:10.2.1'
+    compile 'com.google.android.gms:play-services-maps:+'
+
+    //compile 'com.applitools:eyes-images-java3:3.21'
+    //compile 'commons-io:commons-io:2.5'
+    //compile 'com.github.jai-imageio:1.3.0'
+
+    //compile 'com.google.android.gms:play-services-maps:10.2.1'
+
+    //androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.1'
+
+//    compile 'com.fasterxml.jackson.core:jackson-core:2.7.2'
+//    androidTestCompile 'com.fasterxml.jackson.core:jackson-databind:2.7.2'
+//
+//    androidTestCompile 'com.android.support:support-annotations:24.0.0'
+//    androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2'
 
 }
+
+
+
+
+
+//
+//
+//buildscript {
+//    //apply from: file('../gradle/nexus.gradle')
+//
+//    dependencies {
+//        classpath 'com.android.tools.build:gradle:2.3.1'
+//        //classpath 'com.android.tools.build:gradle:3.0.0-alpha1'
+//        //classpath "com.newrelic.agent.android:agent-gradle-plugin:5.7.0"
+//    }
+//
+//
+//    repositories {
+//        maven { url 'https://salesforce-marketingcloud.github.io/JB4A-SDK-Android/repository' }
+//        //For Marketing Cloud SDK
+//        //maven { url 'https://maven.google.com' }
+//        mavenLocal()
+//        mavenCentral()
+//        jcenter()
+//    }
+//
+//}
+//apply plugin: 'com.android.application'
+////apply plugin: 'newrelic'
+////apply from: 'gradle/build-properties.gradle'
+//
+//group 'com.salesforce.android'
+//
+//// method to get environment variable, and a defaultValue to fallback to
+//def getEnv = { name, defaultValue ->
+//    System.getenv(name) ?: defaultValue
+//}
+//
+//android {
+//    compileSdkVersion 23
+//    buildToolsVersion "26.0.1"
+//    compileOptions.incremental = false
+//
+//    dataBinding {
+//        enabled = true
+//        enabledForTests = true
+//    }
+//
+//    defaultConfig {
+//        applicationId "com.salesforce.dreamforce"
+//        minSdkVersion 19
+//        targetSdkVersion 23
+//
+//        versionCode 40500
+//        versionName "4.5.0"
+//
+//        multiDexEnabled true
+//        vectorDrawables.useSupportLibrary = true
+//        testInstrumentationRunner "com.salesforce.events.test.EventsAndroidJUnitRunner"
+//
+//        // Build constants
+//        // Schema used for service host base url
+//        buildConfigField "String", "SERVICE_HOST_SCHEME", '"https"'
+//
+//        // version of the bundled DB, increment when we update DB
+//        buildConfigField "int", "BUNDLED_DB_VERSION", '32'
+//
+//        //EULA build constants. Increment version everytime there is a change in EULA/privacy policy
+//        buildConfigField "int", "EULA_VERSION", '7'
+//        buildConfigField "String", "EULA_URL", '"file:///android_res/raw/order_form_supplement.html"'
+//        buildConfigField "String", "PRIVACY_POLICY_URL", '"https://www.salesforce.com/company/privacy/mobile/events_en.pdf"'
+//        buildConfigField "String", "VIDYARD_AUTH_TOKEN", '"RCy6t52QNNqcoUWqc9XYig"'
+//
+//        buildConfigField "boolean", "IS_INTERNAL_BUILD", 'false'
+//        buildConfigField "boolean", "IS_PROD_BUILD", 'false'
+//        buildConfigField "boolean", "IS_LEAKCANARY_BUILD", 'false'
+//        buildConfigField "boolean", "IS_NEW_RELIC_ENABLED", 'false'
+//        buildConfigField "boolean", "IS_FEED_ENABLED", 'false'
+//        //service ids
+//        buildConfigField "String", "SOS_POD", '"d.la1-c2cs-iad.salesforceliveagent.com"'
+//        buildConfigField "String", "SOS_ORG_ID", '"00Dc0000003w18v"'
+//        buildConfigField "String", "SOS_DEPLOYMENT_ID", '"0NW3A000000KyjQ"'
+//        buildConfigField "String", "CHAT_BUTTON_ID", '"57330000000CuoQ"'
+//        buildConfigField "String", "LIVE_AGENT_DEPLOYMENT_ID", '"572300000008idM"'
+//
+//        manifestPlaceholders = [host: "success.salesforce.com"]
+//
+//        // Sql cipher doesn't have an official 64 bit build, so we don't build for 64 CPU today
+//        ndk {
+//            abiFilters "x86", "armeabi-v7a"
+//        }
+//
+//        sourceSets.main {
+//            jniLibs.srcDir 'libs'
+//        }
+//
+//        testOptions {
+//            unitTests.returnDefaultValues = true // For junit tests run in jvm
+//        }
+//
+//        multiDexKeepProguard file('multiDexKeep.pro')
+//
+//        packagingOptions {
+//            exclude 'META-INF/maven/com.google.guava/guava/pom.properties'
+//            exclude 'META-INF/maven/com.google.guava/guava/pom.xml'
+//
+//            // The following 6 are required for Feed SDK
+//            exclude 'lib/arm64-v8a/libimagepipeline.so'
+//            exclude 'lib/x86_64/libimagepipeline.so'
+//            exclude 'lib/armeabi/libdatabase_sqlcipher.so'
+//            exclude 'lib/armeabi/libimagepipeline.so'
+//            exclude 'lib/armeabi/libsqlcipher_android.so'
+//            exclude 'lib/armeabi/libstlport_shared.so'
+//        }
+//    }
+//
+//    //Disable InconsistentLayout until the below issue is fixed in the library
+//    // https://code.google.com/p/android/issues/detail?id=227098
+//    //Disable RTLCheck until we start supporting RTL languages
+//    lintOptions {
+//        disable 'InconsistentLayout', 'RestrictedApi', 'StaticFieldLeak', 'TypographyQuotes', 'RtlHardcoded'
+//    }
+//
+//    productFlavors {
+//        production {
+//            manifestPlaceholders = [host: "success.salesforce.com"]
+//            buildConfigField "String", "SERVICE_HOST", '"success.salesforce.com"'
+//            buildConfigField "String", "SERVICE_HOST_BASE_PATH", '""'
+//            buildConfigField "String", "HOCKEY_APP_ID", '"582a2a063467f7328f7c1f2e8ceb8089"'
+//            buildConfigField "boolean", "IS_PROD_BUILD", 'true'
+//            buildConfigField "String", "EDGE_SDK_API_KEY", '"b4412046-66ea-472c-802b-95880964fcd4-c6a8f4-115b"'
+//        }
+//
+//        dfmobile {
+//            manifestPlaceholders = [host: "dfmobile-tzorg.cs12.force.com"]
+//            buildConfigField "String", "SERVICE_HOST", '"dfmobile-tzorg.cs12.force.com"'
+//            buildConfigField "String", "SERVICE_HOST_BASE_PATH", '"customers"'
+//            buildConfigField "String", "HOCKEY_APP_ID", '"240ebe6368c78e19292dcb39a8b5b56c"'
+//            buildConfigField "String", "EDGE_SDK_API_KEY", '"1af08b98-784e-4a59-a745-d9a2244026fe-5896cac-115b"'
+//
+//            // Feed is currently turned off. If it's to be turned on for prod release,
+//            // consider adding activeEvent.mDisableChatter condition at BFHA.refreshBottomMenu
+//            // The method keeps or removes Feed bottom nav item.
+//            buildConfigField "boolean", "IS_FEED_ENABLED", 'false'
+//        }
+//    }
+//
+//    signingConfigs {
+//        debug {
+//            storeFile file("config/keystore/debug/events_android.keystore")
+//            storePassword "sanfran21"
+//            keyAlias "events_droid"
+//            keyPassword "sanfran21"
+//        }
+//        release {
+//            storeFile file("config/keystore/release/events_android.keystore")
+//            storePassword System.getenv("KSTOREPWD")
+//            keyAlias "dreamforce_droid"
+//            keyPassword System.getenv("KEYPWD")
+//        }
+//    }
+//
+//    buildTypes {
+//        release {
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.release
+//            buildConfigField "String", "NEW_RELIC_APP_TOKEN", '"AAc96c6441817a047668648c5f290cdedca0b6224d"'
+//            // marketing cloud ids
+//            buildConfigField "String", "MARKETING_SDK_APP_ID", '"bb5a1dcb-fc92-4a2b-92d5-f96dae329b1e"'
+//            buildConfigField "String", "MARKETING_SDK_APP_ACCESS_TOKEN", '"gvrj34ttnm5vt9xj4xudj722"'
+//            buildConfigField "String", "MARKETING_SDK_APP_SENDER_ID", '"375232608671"'
+//            //service ids
+//            buildConfigField "String", "SOS_POD", '"d.la1-c2-phx.salesforceliveagent.com"'
+//            buildConfigField "String", "SOS_ORG_ID", '"00D30000000eHD5"'
+//            buildConfigField "String", "SOS_DEPLOYMENT_ID", '"0NW3A000000KyjQ"'
+//            buildConfigField "String", "CHAT_BUTTON_ID", '"57330000000CuoQ"'
+//            buildConfigField "String", "LIVE_AGENT_DEPLOYMENT_ID", '"572300000008idM"'
+//            // Release type of build is only for google play. google play has a different app on hockey app
+//            buildConfigField "String", "HOCKEY_APP_ID", '"6a644d156f44cdbbba235750cfea823c"'
+//            // enable/disable features
+//            buildConfigField "boolean", "IS_NEW_RELIC_ENABLED", 'true'
+//        }
+//        debug {
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'debug-proguard-rules.pro'
+//            testProguardFile 'test-proguard-rules.pro'
+//            testCoverageEnabled true
+//            signingConfig signingConfigs.debug
+//            buildConfigField "String", "NEW_RELIC_APP_TOKEN", '"AA1efd86c85ee775cca9e86ba3150771d9f95b7430"'
+//            // marketing cloud ids
+//            buildConfigField "String", "MARKETING_SDK_APP_ID", '"413201d1-f694-41b3-90d5-7bb6a2f11dd0"'
+//            buildConfigField "String", "MARKETING_SDK_APP_ACCESS_TOKEN", '"9arcbvhncmwbkh56ggtyv8re"'
+//            buildConfigField "String", "MARKETING_SDK_APP_SENDER_ID", '"652794118348"'
+//            // enable/disable features
+//            buildConfigField "boolean", "IS_NEW_RELIC_ENABLED", 'false'
+//        }
+//        internal {
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.release
+//            buildConfigField "String", "NEW_RELIC_APP_TOKEN", '"AAae95e85e393d357bd0c0c909aaaee7deab9470f2"'
+//            buildConfigField "String", "MARKETING_SDK_APP_ID", '"c35ca345-fdc6-4b55-be7d-97cdc3b62594"'
+//            buildConfigField "String", "MARKETING_SDK_APP_ACCESS_TOKEN", '"7m3z445g98z5yrhtek4qc6cn"'
+//            buildConfigField "String", "MARKETING_SDK_APP_SENDER_ID", '"375232608671"'
+//            //service ids
+//            buildConfigField "String", "SOS_POD", '"d.la1-c2-phx.salesforceliveagent.com"'
+//            buildConfigField "String", "SOS_ORG_ID", '"00D30000000eHD5"'
+//            buildConfigField "String", "SOS_DEPLOYMENT_ID", '"0NW3A000000KyjQ"'
+//            buildConfigField "String", "CHAT_BUTTON_ID", '"57330000000CuoQ"'
+//            buildConfigField "String", "LIVE_AGENT_DEPLOYMENT_ID", '"572300000008idM"'
+//            // enable/disable features
+//            buildConfigField "boolean", "IS_INTERNAL_BUILD", 'true'
+//            buildConfigField "boolean", "IS_NEW_RELIC_ENABLED", 'true'
+//        }
+//        leakCanary {
+//            // leakCanary build type is very similar to debug.
+//            debuggable true
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'debug-proguard-rules.pro'
+//            testProguardFile 'test-proguard-rules.pro'
+//            signingConfig signingConfigs.debug
+//            buildConfigField "String", "NEW_RELIC_APP_TOKEN", '""'
+//            // marketing cloud ids
+//            buildConfigField "String", "MARKETING_SDK_APP_ID", '"413201d1-f694-41b3-90d5-7bb6a2f11dd0"'
+//            buildConfigField "String", "MARKETING_SDK_APP_ACCESS_TOKEN", '"9arcbvhncmwbkh56ggtyv8re"'
+//            buildConfigField "String", "MARKETING_SDK_APP_SENDER_ID", '"652794118348"'
+//            // enable/disable features
+//            buildConfigField "boolean", "IS_LEAKCANARY_BUILD", 'true'
+//            buildConfigField "boolean", "IS_NEW_RELIC_ENABLED", 'false'
+//        }
+//        stager {
+//            applicationIdSuffix ".stager"
+//            debuggable true
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'debug-proguard-rules.pro'
+//            testProguardFile 'test-proguard-rules.pro'
+//            signingConfig signingConfigs.debug
+//            buildConfigField "String", "NEW_RELIC_APP_TOKEN", '""'
+//            // marketing cloud ids
+//            buildConfigField "String", "MARKETING_SDK_APP_ID", '"413201d1-f694-41b3-90d5-7bb6a2f11dd0"'
+//            buildConfigField "String", "MARKETING_SDK_APP_ACCESS_TOKEN", '"9arcbvhncmwbkh56ggtyv8re"'
+//            buildConfigField "String", "MARKETING_SDK_APP_SENDER_ID", '"652794118348"'
+//            // enable/disable features
+//            buildConfigField "boolean", "IS_LEAKCANARY_BUILD", 'false'
+//            buildConfigField "boolean", "IS_NEW_RELIC_ENABLED", 'false'
+//        }
+//        // feed variant is only temporary. The purpose is to provide debuggable Feed apk + HockeyApp set up for Feed team.
+//        // can be deleted after feed is fully integrated and turned on for Events app.
+//        feed {
+//            debuggable true
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'debug-proguard-rules.pro'
+//            testProguardFile 'test-proguard-rules.pro'
+//            testCoverageEnabled true
+//            signingConfig signingConfigs.debug
+//            buildConfigField "String", "NEW_RELIC_APP_TOKEN", '"AA1efd86c85ee775cca9e86ba3150771d9f95b7430"'
+//            // marketing cloud ids
+//            buildConfigField "String", "MARKETING_SDK_APP_ID", '"413201d1-f694-41b3-90d5-7bb6a2f11dd0"'
+//            buildConfigField "String", "MARKETING_SDK_APP_ACCESS_TOKEN", '"9arcbvhncmwbkh56ggtyv8re"'
+//            buildConfigField "String", "MARKETING_SDK_APP_SENDER_ID", '"652794118348"'
+//            // enable/disable features
+//            buildConfigField "boolean", "IS_LEAKCANARY_BUILD", 'false'
+//            buildConfigField "boolean", "IS_NEW_RELIC_ENABLED", 'false'
+//
+//            // For Feed
+//            buildConfigField "boolean", "IS_FEED_ENABLED", 'true'
+//            buildConfigField "String", "HOCKEY_APP_ID", '"e69461a4669e41bd9fcd312e62e6205c"'
+//        }
+//        applicationVariants.all { variant ->
+//            if (variant.buildType.name.equals('internal')) {
+//                variant.mergedFlavor.versionCode = getEnv('BUILD_NUMBER', 0) as Integer;
+//            }
+//        }
+//    }
+//
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_7
+//        targetCompatibility JavaVersion.VERSION_1_7
+//    }
+//
+//    packagingOptions {
+//        exclude 'META-INF/DEPENDENCIES'
+//        exclude 'META-INF/LICENSE'
+//        exclude 'META-INF/LICENSE.txt'
+//        exclude 'META-INF/NOTICE'
+//        exclude 'LICENSE.txt'
+//    }
+//
+//    lintOptions {
+//        abortOnError true
+//
+//        lintConfig file("$projectDir/config/lint/lint.xml")
+//
+//        // if true, generate an HTML report (with issue explanations, sourcecode, etc)
+//        htmlReport true
+//        // optional path to report (default will be lint-results.html in the builddir)
+//        htmlOutput file("$project.buildDir/reports/lint/lint-report.html")
+//
+//        // if true, generate an XML report for use by for example Jenkins
+//        xmlReport true
+//        // file to write report to (if not specified, defaults to lint-results.xml)
+//        xmlOutput file("$project.buildDir/reports/lint/lint-report.xml")
+//    }
+//
+//    testOptions {
+//        unitTests.all {
+//            jvmArgs '-noverify'
+//            maxParallelForks = 2
+//            forkEvery = 300
+//            systemProperty 'robolectric.offline', true
+//            systemProperty 'robolectric.dependency.dir', 'robolectric/'
+//            jacoco {
+//                includeNoLocationClasses = true
+//            }
+//        }
+//    }
+//
+//    sourceSets {
+//        test {
+//            java.srcDirs = ['src/test/java', 'src/testUtil/java']
+//
+//        }
+//
+//        androidTest {
+//            java.srcDirs = ['src/androidTest/java', 'src/testUtil/java']
+//        }
+//        stager {
+//            java.srcDirs = ['src/stager/java']
+//        }
+//    }
+//}
+//
+//configurations {
+//    all {
+//        resolutionStrategy {
+//            // testApp uses 23.1.1
+//            //force "com.android.support:design:$supportLibraryVersion"
+//        }
+//    }
+//}
+//
+//dependencies {
+//    compile fileTree(dir: 'libs', include: ['*.jar'])
+//    //compile(project(':libs:SmartSync'))
+//    //compile project(":L10n-Events-Android")
+//    compile files('libs/TwinPrimeSDK-OkHttp3-2.0.0.14.jar')
+//
+//    //compile "com.android.support:design:$supportLibraryVersion"
+////    compile "com.android.support:appcompat-v7:$supportLibraryVersion"
+////    compile "com.android.support:preference-v14:$supportLibraryVersion"
+////    compile "com.android.support:cardview-v7:$supportLibraryVersion"
+////    compile "com.android.support:customtabs:$supportLibraryVersion" // Chrome CustomTab
+////    compile 'com.android.support:multidex:1.0.1'
+//
+////    compile('com.salesforce.service:servicesdk:208.0.0') {
+////        exclude group: 'com.salesforce.mobilesdk', module: 'SmartStore'
+////        exclude group: 'com.salesforce.mobilesdk', module: 'SalesforceSDK'
+////    }
+//
+//    // Chrome custom tab: https://git.soma.salesforce.com/Android/ChromeTab
+//    //compile 'com.salesforce.android:chrometab:1.1.0'
+//
+//    // third party dependencies
+//    compile 'net.hockeyapp.android:HockeySDK:4.1.2' // hockey app for crash reporting
+//    compile 'org.greenrobot:eventbus:3.0.0' // Event bus library for decoupling components
+//
+//    compile 'com.jakewharton:butterknife:8.5.1'
+//    annotationProcessor 'com.jakewharton:butterknife-compiler'
+//    compile 'com.facebook.fresco:fresco:1.1.0' // image caching library
+//    compile 'me.relex:photodraweeview:1.1.2' // for zoomable drawee view
+//    compile 'com.facebook.fresco:imagepipeline-okhttp3:1.1.0'
+//    compile 'com.tonicartos:superslim:0.4.13' // for sticky headers in list views
+//    //compile "com.google.android.gms:play-services-maps" // for maps in session detail
+//    compile 'com.newrelic.agent.android:android-agent:5.7.0' // new relic for analytics
+//    //compile "com.google.android.gms:play-services-location"
+//    compile 'com.exacttarget.etpushsdk:etsdk:4.9.3@aar' // marketing cloud sdk
+//    //compile "com.google.android.gms:play-services-gcm" // required by marketing cloud sdk
+//    compile 'org.altbeacon:android-beacon-library:2.5.1@aar' // required by marketing cloud sdk
+//    compile 'com.fasterxml.jackson.core:jackson-core:2.7.2' // for parsing Json
+//    compile 'com.jakewharton.threetenabp:threetenabp:1.0.3' // Java8 Date Time backport library with Android perf improvements
+//    compile 'com.soundcloud.android:android-crop:1.0.1@aar' //Image cropping for profile photo
+//    compile 'com.squareup.okhttp3:okhttp:3.3.1' //Okhttp required for all the network requests
+//    compile 'com.google.android.exoplayer:exoplayer:r1.5.8' //Exoplayer for playing session videos
+//    compile 'com.google.guava:guava:20.0' // for various utility APIs (to be removed on upgrade to Java 8)
+//    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+//    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+//    compile 'io.github.yavski:fab-speed-dial:1.0.6'
+//
+//    // Dagger2
+//    compile 'com.google.dagger:dagger:2.10'
+//    annotationProcessor 'com.google.dagger:dagger-compiler'
+//    provided 'javax.annotation:jsr250-api:1.0'
+//    androidTestCompile 'com.google.dagger:dagger:2.10'
+//    androidTestAnnotationProcessor 'com.google.dagger:dagger-compiler'
+//    androidTestProvided 'javax.annotation:jsr250-api:1.0'
+//    testCompile 'com.google.dagger:dagger:2.10'
+//    testAnnotationProcessor 'com.google.dagger:dagger-compiler'
+//    testProvided 'javax.annotation:jsr250-api:1.0'
+//
+//    debugCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+//    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+//    internalCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+//    leakCanaryCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+//    stagerCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+//    feedCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+//
+//    // Salesforce library dependencies
+////    compile('com.salesforce.android:SalesforceFeedbackEngine:1.0.0-d405de8@aar') { // Feedback Engine library
+////        exclude group: 'com.android.support'
+////        transitive = true
+////        force = true
+////    }
+////    compile('com.salesforce.android:AndroidCommon:1.0.0-cad8b90@aar') { // Android Common library
+////        exclude group: 'com.android.support', module: 'support-v13'
+////        exclude group: 'com.android', module: 'volley'
+////    }
+////    compile 'com.salesforce.android:feedsdk:1.0.0-alpha15', { // Chatter Feed
+////        exclude module: 'SalesforceSDK'
+////        exclude module: 'SmartStore'
+////        exclude group: 'com.android.support'
+////        changing = true
+////    }
+////
+////    compile('com.salesforce.android:AndroidEULA:1.0.0-9d1be2b') { //required for EULA
+////        exclude group: 'com.android.support'
+////        force = true
+////    }
+////
+////    compile('com.salesforce.ux:SalesforceDesignSystem:3.0.0') {
+////        exclude group: 'com.android.support', module: 'support-annotations'
+////        force = true
+////    }
+//
+//    // following 4 are required by mockito, and unit tests
+//    androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
+//    androidTestCompile 'com.applitools:eyes-android-espresso:1.0.2@aar'
+//    androidTestCompile 'com.applitools:eyes-android-common:1.0.+'
+//    androidTestCompile 'com.applitools:eyes-android-core:1.0.+'
+//    // following items are for JUnit tests (run in JVM)
+//    testCompile 'junit:junit:4.12'
+//    testCompile 'org.json:json:20160212'//to reference json in JUnit
+//
+//    // the Jake Wharton version is not pure java; this lets the Java 8 backport code work in unit tests
+//    testCompile 'org.threeten:threetenbp:1.3.1'
+//
+//    //solving for inconsistent dependency version
+//    androidTestCompile "com.android.support:support-annotations:25.1.0"
+//
+//    // following 8 are required for espresso
+//    androidTestCompile 'com.android.support.test:runner:0.5'
+//    androidTestCompile 'com.android.support.test:rules:0.5'
+//
+////LOOK INTO THIS MORE
+////    androidTestCompile "com.android.support.test.espresso:espresso-web"
+////    androidTestCompile("com.android.support.test.espresso:espresso-contrib") {
+////        // http://stackoverflow.com/questions/29216327/java-lang-incompatibleclasschangeerror-when-including-espresso-contrib2-0/29423456#29423456
+////        exclude module: 'support-annotations'
+////        exclude module: 'support-v4'
+////        exclude module: 'support-v13'
+////        exclude module: 'recyclerview-v7'
+////    }
+//
+//
+//    androidTestCompile("com.android.support.test.espresso:espresso-core:2.2.2", {
+//        exclude group: 'com.android.support', module: 'support-annotations'
+//    })
+//
+//    //androidTestCompile "com.android.support.test.espresso:espresso-intents:$espressoVersion"
+//    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
+//
+//
+//    //LOOK INTO THESE DEPENDENCIES
+//    //androidTestCompile 'com.squareup.okio:okio:1.11.0'
+//    //androidTestCompile 'com.squareup.okhttp3:okhttp:3.6.0'
+//    //androidTestCompile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+//
+//
+//    androidTestCompile 'com.fasterxml.jackson.core:jackson-databind:2.7.2'
+//    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+//    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+//
+//    //to be able to use it, we need install the apk on the emulator first.
+//    androidTestCompile 'com.linkedin.testbutler:test-butler-library:1.2.0'
+//
+//    // Power mock to mock Android classes
+//    testCompile "org.powermock:powermock-module-junit4:1.6.5"
+//    testCompile "org.powermock:powermock-module-junit4-rule:1.6.5"
+//    testCompile "org.powermock:powermock-api-mockito:1.6.5"
+//    testCompile "org.powermock:powermock-classloading-xstream:1.6.5"
+//
+//    testCompile "org.robolectric:robolectric:3.3.2"
+//    testCompile "org.robolectric:shadows-support-v4:3.3.2"
+//    testCompile 'org.khronos:opengl-api:gl1.1-android-2.1_r1'
+//}
+//
+///*
+// * Project tasks go here
+// */
+//
+//// Workaround for issue with webview loading the raw resource using the wrong package name
+//// https://code.google.com/p/android/issues/detail?id=154653
+////android.applicationVariants.all { variant ->
+////    variant.javaCompile.doFirst {
+////        copy {
+////            from "${buildDir}/generated/source/r/${variant.dirName}/com/salesforce/events/R.java"
+////            into "${buildDir}/generated/source/r/${variant.dirName}/com/salesforce/dreamforce/"
+////        }
+////        File rFile = file("${buildDir}/generated/source/r/${variant.dirName}/com/salesforce/dreamforce/R.java")
+////        String content = rFile.getText('UTF-8')
+////        String newPackageName = "com.salesforce.dreamforce";
+////        content = content.replaceAll(/com.salesforce.events/, newPackageName)
+////        rFile.write(content, 'UTF-8')
+////    }
+////}
+//
+//// Get the path to ADB.  Required when running tests directly from Android Studio.
+//// Source: http://stackoverflow.com/a/26771087/112705
+//def adb = android.getAdbExe().toString()
+//
+//// Source: http://stackoverflow.com/q/29908110/112705
+////afterEvaluate {
+////    task grantAnimationPermissionDebug(type: Exec, dependsOn: 'installDfmobileDebug') {
+////        commandLine "$adb shell pm grant ${android.defaultConfig.applicationId} android.permission.SET_ANIMATION_SCALE".split(' ')
+////    }
+////
+////    // When launching individual tests from Android Studio, it seems that only the assemble tasks
+////    // get called directly, not the install* versions
+////    tasks.each { task ->
+////        if (task.name.startsWith('connectedDfmobileDebugAndroidTest')) {
+////            task.dependsOn grantAnimationPermissionDebug
+////        }
+////    }
+////}
+//
+//task gitRevision(type: Exec) {
+//    commandLine 'git', 'rev-parse', 'HEAD'
+//    standardOutput = new ByteArrayOutputStream()
+//
+//    ext.revision = { standardOutput.toString().trim() }
+//}
+//
+//task gitShortRevision(type: Exec) {
+//    commandLine 'git', 'rev-parse', '--short', 'HEAD'
+//    standardOutput = new ByteArrayOutputStream()
+//
+//    ext.revision = { standardOutput.toString().trim() }
+//}
+//
+//apply plugin: "jacoco"
+//
+//jacoco {
+//    toolVersion = "0.7.9"
+//}
+//
+//// to force JVM tests to run first then Android Instrumentation tests
+////task jvmTest(dependsOn: ["testDfmobileDebugUnitTest"])
+////task androidInstrumentationTest(dependsOn: ["connectedDfmobileDebugAndroidTest"])
+////androidInstrumentationTest.shouldRunAfter jvmTest
+////
+////task jacocoTestReport(type: JacocoReport, dependsOn: [jvmTest, androidInstrumentationTest]) {
+////    def coverageSourceDirs = [
+////            'src/main/java'
+////    ]
+////
+////    group = "Reporting"
+////    description = "Generates Jacoco coverage reports"
+////    reports {
+////        xml.enabled = false
+////        html.enabled = true
+////        xml {
+////            destination "$project.buildDir/reports/jacoco/jacoco.xml"
+////        }
+////        html {
+////            destination "$project.buildDir/reports/jacoco"
+////        }
+////    }
+////
+////    classDirectories = fileTree(
+////            dir: 'build/intermediates/classes/dfmobile/debug/com/salesforce/events',
+////            excludes: ['**/R.class',
+////                       '**/R$*.class',
+////                       '**/BuildConfig.*',
+////                       '**/Manifest*.*',
+////                       'databinding/*Binding.class',
+////                       'ui/detail/player/**',
+////                       'dagger/**Factory*',
+////                       'eventbus/**',
+////                       'ui/ActivityConstants.class'
+////            ]
+////    )
+////
+////    sourceDirectories = files(coverageSourceDirs)
+////    additionalSourceDirs = files(coverageSourceDirs)
+////    executionData = files(['build/outputs/code-coverage/connected/flavors/DFMOBILE/coverage.ec', 'build/jacoco/testDfmobileDebugUnitTest.exec'])
+////    // fixes https://code.google.com/p/android/issues/detail?id=69174.
+////    // We iterate through the compiled .class tree and rename $$ to $.
+////    doFirst {
+////        new File("$project.buildDir/intermediates/classes/").eachFileRecurse { file ->
+////            if (file.name.contains('$$')) {
+////                file.renameTo(file.path.replace('$$', '$'))
+////            }
+////        }
+////    }
+////}
+//
+//apply plugin: "pmd"
+//pmd {
+//    toolVersion = '5.5.1' // force newer PMD. helps with unnecessary @SuppressWarnings
+//}
+//
+//task pmd(type: Pmd) {
+//    ruleSetFiles = files("$projectDir/config/pmd/pmd_rules.xml")
+//    ignoreFailures = false
+//    ruleSets = []
+//
+//    source 'src'
+//    include '**/*.java'
+//    exclude '**/gen/**'
+//
+//    reports {
+//        xml.enabled = false
+//        html.enabled = true
+//        xml {
+//            destination "$project.buildDir/reports/pmd/pmd.xml"
+//        }
+//        html {
+//            destination "$project.buildDir/reports/pmd/pmd.html"
+//        }
+//    }
+//}
+//
+//
+////apply plugin: "findbugs"
+////task findbugs(type: FindBugs, dependsOn: "assembleDfmobileDebug") {
+////    ignoreFailures = false
+////    effort = "max"
+////    reportLevel = "high"
+////    excludeFilter = new File("$projectDir/config/findbugs/findbugs-exclude-filter.xml")
+////    classes = files("$projectDir/build/intermediates/classes/dfmobile/debug")
+////
+////    source 'src'
+////    include '**/*.java'
+////    exclude '**/gen/**'
+////
+////
+////    reports {
+////        xml.enabled = false
+////        html.enabled = true
+////        xml {
+////            destination "$project.buildDir/reports/findbugs/findbugs.xml"
+////        }
+////        html {
+////            destination "$project.buildDir/reports/findbugs/findbugs.html"
+////        }
+////    }
+////
+////    classpath = files()
+////}
+//
+//
+//apply plugin: "checkstyle"
+//task checkstyle(type: Checkstyle) {
+//    configFile file("$projectDir/config/checkstyle/checkstyle.xml") // Where my checkstyle config is...
+//    configProperties.checkstyleConfigDir = file("$projectDir/config/checkstyle")
+//    source 'src'
+//    include '**/*.java'
+//    exclude '**/gen/**'
+//    classpath = files()
+//}
+//
+//task checkstyleReport << {
+//
+//    if (file("$buildDir/reports/checkstyle/checkstyle.xml").exists()) {
+//        ant.xslt(in: "$project.buildDir/reports/checkstyle/checkstyle.xml",
+//                style: "$projectDir/config/checkstyle/checkstyle.xsl",
+//                out: "$project.buildDir/reports/checkstyle/checkstyle.html"
+//        )
+//    }
+//}
+//
+//gradle.taskGraph.afterTask { Task task, TaskState state ->
+//    if (state.failure) {
+//        if (task.name in ['checkstyle', 'checkstyleTest']) {
+//            checkstyleReport {
+//                def matcher = task.name =~ /^checkstyle(.*)$/
+//                if (matcher.matches()) {
+//                    project.ext.set("checkType", matcher.group(1).toLowerCase())
+//                }
+//            }
+//            checkstyleReport.execute()
+//        }
+//    }
+//}
+//
+//task pullFromDevice(type: Exec) {
+//    ignoreExitValue = true
+//    if (state.failure) {
+//        commandLine "$adb", 'pull', '/sdcard/Android/data/com.salesforce.dreamforce/files/screenshots', 'build/outputs/reports/screenshots'
+//    }
+//}
+//
+////pullFromDevice.mustRunAfter 'connectedAndroidTestDfmobileDebug'
+//
+////check.dependsOn 'checkstyle', 'pmd', 'lint'

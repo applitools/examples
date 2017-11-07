@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C3004D71B320559261E1EA8 /* Pods_AppliTools_XCUI_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E63F6EDBD640A49D7F457B2 /* Pods_AppliTools_XCUI_Demo.framework */; };
+		BC601EF0CF7B506A5874BD30 /* Pods_AppliTools_XCUI_DemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6604A653A9493C6AE882B6 /* Pods_AppliTools_XCUI_DemoUITests.framework */; };
 		F940967C1EA76CE600712138 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F940967B1EA76CE600712138 /* CollectionViewController.m */; };
 		F940967F1EA76D0E00712138 /* CVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F940967E1EA76D0E00712138 /* CVCell.m */; };
 		F94D198B1D7EBAF200B4860C /* ApplitoolsEyesUITestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F94D198A1D7EBAF200B4860C /* ApplitoolsEyesUITestCase.m */; };
@@ -49,6 +51,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C6604A653A9493C6AE882B6 /* Pods_AppliTools_XCUI_DemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppliTools_XCUI_DemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61CBEBB7E31B09E2C395DF94 /* Pods-AppliTools XCUI DemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppliTools XCUI DemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppliTools XCUI DemoUITests/Pods-AppliTools XCUI DemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9E63F6EDBD640A49D7F457B2 /* Pods_AppliTools_XCUI_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppliTools_XCUI_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A595FEA5B80A4EBB084F968D /* Pods-AppliTools XCUI Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppliTools XCUI Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppliTools XCUI Demo/Pods-AppliTools XCUI Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		B1CC03C520D0677FECDCE505 /* Pods-AppliTools XCUI DemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppliTools XCUI DemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppliTools XCUI DemoUITests/Pods-AppliTools XCUI DemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D8A34A677D95C1D698746F97 /* Pods-AppliTools XCUI Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppliTools XCUI Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppliTools XCUI Demo/Pods-AppliTools XCUI Demo.release.xcconfig"; sourceTree = "<group>"; };
 		F940967A1EA76CE500712138 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		F940967B1EA76CE600712138 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		F940967D1EA76D0E00712138 /* CVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVCell.h; sourceTree = "<group>"; };
@@ -81,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C3004D71B320559261E1EA8 /* Pods_AppliTools_XCUI_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,18 +100,32 @@
 				F9BB7F951F1F628F0004DE65 /* EyesXCUI.framework in Frameworks */,
 				F9548FF61ED4507000659EAE /* libAccessibility.tbd in Frameworks */,
 				F9548FF21ED44F4200659EAE /* libxml2.tbd in Frameworks */,
+				BC601EF0CF7B506A5874BD30 /* Pods_AppliTools_XCUI_DemoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B4950169008079A645A7CFE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A595FEA5B80A4EBB084F968D /* Pods-AppliTools XCUI Demo.debug.xcconfig */,
+				D8A34A677D95C1D698746F97 /* Pods-AppliTools XCUI Demo.release.xcconfig */,
+				B1CC03C520D0677FECDCE505 /* Pods-AppliTools XCUI DemoUITests.debug.xcconfig */,
+				61CBEBB7E31B09E2C395DF94 /* Pods-AppliTools XCUI DemoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F941129E1DC34FB400D95DA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				F9BB7F941F1F628F0004DE65 /* EyesXCUI.framework */,
 				F9548FF51ED4507000659EAE /* libAccessibility.tbd */,
 				F9548FF11ED44F4200659EAE /* libxml2.tbd */,
+				9E63F6EDBD640A49D7F457B2 /* Pods_AppliTools_XCUI_Demo.framework */,
+				1C6604A653A9493C6AE882B6 /* Pods_AppliTools_XCUI_DemoUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,6 +137,7 @@
 				F990C5031D1BFFB7005227DE /* AppliTools XCUI DemoUITests */,
 				F990C4E81D1BFFB7005227DE /* Products */,
 				F941129E1DC34FB400D95DA9 /* Frameworks */,
+				2B4950169008079A645A7CFE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,9 +207,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F990C5091D1BFFB7005227DE /* Build configuration list for PBXNativeTarget "AppliTools XCUI Demo" */;
 			buildPhases = (
+				F507DB1D7AE6200EE3B7EF7A /* [CP] Check Pods Manifest.lock */,
 				F990C4E31D1BFFB7005227DE /* Sources */,
 				F990C4E41D1BFFB7005227DE /* Frameworks */,
 				F990C4E51D1BFFB7005227DE /* Resources */,
+				D4376A4413AD5127780946D2 /* [CP] Embed Pods Frameworks */,
+				7D8F9322C7F4FB49954904E5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,10 +227,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F990C50C1D1BFFB7005227DE /* Build configuration list for PBXNativeTarget "AppliTools XCUI DemoUITests" */;
 			buildPhases = (
+				9B9CA67AD6DAB96FEE208042 /* [CP] Check Pods Manifest.lock */,
 				F990C4FC1D1BFFB7005227DE /* Sources */,
 				F990C4FD1D1BFFB7005227DE /* Frameworks */,
 				F990C4FE1D1BFFB7005227DE /* Resources */,
 				F9BB7F961F1F635F0004DE65 /* CopyFiles */,
+				E915D919A3F98F86CDCE926B /* [CP] Embed Pods Frameworks */,
+				DA51EFD4D0D7907C09EC778C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -222,7 +252,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "appli-tools";
 				TargetAttributes = {
 					F990C4E61D1BFFB7005227DE = {
@@ -274,6 +304,108 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D8F9322C7F4FB49954904E5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppliTools XCUI Demo/Pods-AppliTools XCUI Demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B9CA67AD6DAB96FEE208042 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppliTools XCUI DemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4376A4413AD5127780946D2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppliTools XCUI Demo/Pods-AppliTools XCUI Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA51EFD4D0D7907C09EC778C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppliTools XCUI DemoUITests/Pods-AppliTools XCUI DemoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E915D919A3F98F86CDCE926B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AppliTools XCUI DemoUITests/Pods-AppliTools XCUI DemoUITests-frameworks.sh",
+				"${PODS_ROOT}/EyesXCUI/Eyes/EyesXCUI.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EyesXCUI.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppliTools XCUI DemoUITests/Pods-AppliTools XCUI DemoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F507DB1D7AE6200EE3B7EF7A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppliTools XCUI Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F990C4E31D1BFFB7005227DE /* Sources */ = {
@@ -337,13 +469,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -383,13 +523,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -415,6 +563,7 @@
 		};
 		F990C50A1D1BFFB7005227DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A595FEA5B80A4EBB084F968D /* Pods-AppliTools XCUI Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: L.D. ISRAEL AUTO EQUIPEMENT (1990) LTD (5XA445C6XF)";
@@ -443,6 +592,7 @@
 		};
 		F990C50B1D1BFFB7005227DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8A34A677D95C1D698746F97 /* Pods-AppliTools XCUI Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: L.D. ISRAEL AUTO EQUIPEMENT (1990) LTD (5XA445C6XF)";
@@ -468,6 +618,7 @@
 		};
 		F990C50D1D1BFFB7005227DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1CC03C520D0677FECDCE505 /* Pods-AppliTools XCUI DemoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_ID = 1;
@@ -493,6 +644,7 @@
 		};
 		F990C50E1D1BFFB7005227DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61CBEBB7E31B09E2C395DF94 /* Pods-AppliTools XCUI DemoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_ID = 1;
