@@ -94,42 +94,38 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 24 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="support-v4-24.2.1" level="project" />
+    <orderEntry type="library" exported="" name="support-compat-24.2.1" level="project" />
     <orderEntry type="library" exported="" name="animated-vector-drawable-24.2.1" level="project" />
-    <orderEntry type="library" exported="" name="eyes-android-espresso-1.2.4" level="project" />
+    <orderEntry type="library" exported="" name="support-fragment-24.2.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-library-1.3" level="project" />
-    <orderEntry type="library" exported="" name="eyes-android-common-1.2.4" level="project" />
-    <orderEntry type="library" exported="" name="eyes-android-core-1.2.4" level="project" />
+    <orderEntry type="library" exported="" name="eyes-android-common-1.3.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-integration-1.3" level="project" />
+    <orderEntry type="library" exported="" name="eyes-android-core-1.3.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="espresso-core-3.0.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="espresso-idling-resource-3.0.1" level="project" />
     <orderEntry type="library" exported="" name="converter-jackson-2.3.0" level="project" />
-    <orderEntry type="library" exported="" name="support-core-ui-25.2.0" level="project" />
     <orderEntry type="library" exported="" name="jackson-annotations-2.7.0" level="project" />
-    <orderEntry type="library" exported="" name="play-services-basement-11.2.2" level="project" />
+    <orderEntry type="library" exported="" name="eyes-android-espresso-1.3.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="jsr305-2.0.1" level="project" />
-    <orderEntry type="library" exported="" name="play-services-base-11.2.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="runner-1.0.1" level="project" />
-    <orderEntry type="library" exported="" name="support-core-utils-25.2.0" level="project" />
-    <orderEntry type="library" exported="" name="support-fragment-25.2.0" level="project" />
     <orderEntry type="library" exported="" name="jackson-core-2.7.2" level="project" />
-    <orderEntry type="library" exported="" name="play-services-maps-11.2.2" level="project" />
+    <orderEntry type="library" exported="" name="support-media-compat-24.2.1" level="project" />
+    <orderEntry type="library" exported="" name="support-core-ui-24.2.1" level="project" />
     <orderEntry type="library" exported="" name="okio-1.13.0" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-24.2.1" level="project" />
     <orderEntry type="library" exported="" name="support-vector-drawable-24.2.1" level="project" />
     <orderEntry type="library" exported="" name="retrofit-2.3.0" level="project" />
+    <orderEntry type="library" exported="" name="support-core-utils-24.2.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javax.inject-1" level="project" />
     <orderEntry type="library" exported="" name="jackson-databind-2.7.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="kxml2-2.3.0" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-24.2.1" level="project" />
     <orderEntry type="library" exported="" name="okhttp-3.8.0" level="project" />
-    <orderEntry type="library" exported="" name="support-v4-25.2.0" level="project" />
-    <orderEntry type="library" exported="" name="support-compat-25.2.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javawriter-2.1.1" level="project" />
     <orderEntry type="library" exported="" name="hamcrest-core-1.3" level="project" />
-    <orderEntry type="library" exported="" name="support-media-compat-25.2.0" level="project" />
     <orderEntry type="library" exported="" name="junit-4.12" level="project" />
     <orderEntry type="library" exported="" name="logging-interceptor-3.8.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="rules-1.0.1" level="project" />
-    <orderEntry type="library" exported="" name="play-services-tasks-11.2.2" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-25.2.0" level="project" />
   </component>
 </module>

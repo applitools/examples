@@ -10,6 +10,7 @@ import org.junit.Test;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static com.applitools.eyes.android.common.MatchLevel.STRICT;
 
 /**
  * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
@@ -26,44 +27,33 @@ public class ApplicationTest  {
 
         // Initialize the eyes SDK and set your private API key.
         Eyes eyes = new Eyes();
-        eyes.setApiKey("9RkMajXrzS1Zu110oTWQps102CHiPRPmeyND99E9iL0G7yAc110");
+        eyes.setApiKey("your-applitools-key");
         eyes.setForceFullPageScreenshot(true);
-        //eyes.setMatchLevel(LAYOUT2);
-        eyes.setBranchName("qa");
+        eyes.setMatchLevel(STRICT);
+        eyes.addProperty("environment", "qa");
+        //eyes.setBaselineName("test");
+        //eyes.setBranchName("qa");
         //eyes.setParentBranchName("dev");
         //eyes.setBatch();
-        eyes.addProperty("environment", "qa");
-        eyes.setBaselineName("test");
 
 
         try {
 
             // Start the test.
             eyes.open("Another Espresso Test");
-            //eyes.open("Espresso", "Espresso Test");
-            //eyes.getForceFullPageScreenshot();
+
+            eyes.checkWindow("Home View");
 
             onView(withText("General")).perform(click());
+            eyes.checkWindow("General View");
 
             onView(withText("Add friends to messages")).perform(click());
-
-            //pressBack();
-
-            String fileName = "github-homepage.png";
-
-
-            // Visual validation.
-            eyes.checkWindow("Settings Activity");
+            eyes.checkWindow("withOut dialog");
+            //use this to capture dialog
             eyes.checkWindowAllLayers("with dialog");
             //eyes.checkRegion(withId(16909249));
-            //eyes.checkRegion(withChild());
-            //eyes.checkRegion(withClassName(Matchers.equalTo(android.widget.ListView)));
-            //eyes.checkRegion(withClassName(Matchers.equalTo(ListView.class.getName())));
+            //pressBack();
 
-            //Spoon screenshot
-            //SDK 23
-
-            // End the test.
             eyes.close();
         } finally {
 
