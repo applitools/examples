@@ -82,9 +82,9 @@ class VideoApplitoolsTester
 end
 
 if [ARGV[0], ARGV[1], ARGV[2]].include? nil
-  puts "Run Example: ruby video_to_image.rb '/path/to/ImageTester.jar' 'https://applitools.com/images/videos/step2.mp4' 'Video Frames' 'Steps Example'"
+  puts "Run Example: ruby video_to_image.rb 'https://applitools.com/images/videos/step2.mp4' 'Video Frames' 'Steps Example'"
   puts "Or..."
-  puts "Run Example: ruby video_to_image.rb '/path/to/ImageTester.jar' '/path/to/video.mp4' 'Video Frames' 'Steps Example'\n"
+  puts "Run Example: ruby video_to_image.rb '/path/to/video.mp4' 'Video Frames' 'Steps Example'\n"
 else
   my_test = VideoApplitoolsTester.new(ARGV[0], ARGV[1], ARGV[2])
   my_test.run_test
