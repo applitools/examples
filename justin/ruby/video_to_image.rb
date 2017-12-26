@@ -6,7 +6,7 @@ OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
 class VideoApplitoolsTester
   
-  attr_accessor :eyes, :video_path, :app_name, :test_name, :api_key, :filename, :frame_dir
+  attr_accessor :video_path, :app_name, :test_name, :api_key, :filename, :frame_dir, :eyes
   
   def initialize(video_path, app_name, test_name)
     self.video_path          = video_path
@@ -15,9 +15,9 @@ class VideoApplitoolsTester
     self.api_key             = ENV['APPLITOOLS_API_KEY']
     self.filename            = "#{video_path.split("/").last}"
     self.frame_dir           = "#{Dir.pwd}/TEST-#{filename.upcase}"
-    self.eyes = Applitools::Images::Eyes.new
-    eyes.api_key = ENV['APPLITOOLS_API_KEY']
-    #eyes.log_handler = Logger.new(STDOUT)
+    self.eyes                = Applitools::Images::Eyes.new
+    eyes.api_key             = ENV['APPLITOOLS_API_KEY']
+    #eyes.log_handler        = Logger.new(STDOUT)
     prepare_test
   end
   
@@ -61,8 +61,8 @@ class VideoApplitoolsTester
   def upload_to_applitools
     eyes.test(app_name: app_name, test_name: test_name) do
       files = Dir.glob("#{frame_dir}/*.png")
-      puts "My Files: #{files}"
-      files.each { |file| eyes.check_image(image_path: file, tag: file) }
+      puts "\nMy Images: #{files}\n"
+      files.each { |file| eyes.check_image(image_path: file, tag: File.basename(file)) }
     end
   end
   
