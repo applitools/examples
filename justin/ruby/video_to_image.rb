@@ -1,18 +1,23 @@
 require "httparty"
 require 'fileutils'
+require 'eyes_images'
+require 'openssl'
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
 class VideoApplitoolsTester
   
-  attr_accessor :image_tester_binary, :video_path, :app_name, :test_name, :api_key, :filename, :frame_dir
+  attr_accessor :eyes, :video_path, :app_name, :test_name, :api_key, :filename, :frame_dir
   
-  def initialize(image_tester_binary, video_path, app_name, test_name)
-    self.image_tester_binary = image_tester_binary
+  def initialize(video_path, app_name, test_name)
     self.video_path          = video_path
     self.app_name            = app_name
     self.test_name           = test_name
     self.api_key             = ENV['APPLITOOLS_API_KEY']
     self.filename            = "#{video_path.split("/").last}"
     self.frame_dir           = "#{Dir.pwd}/TEST-#{filename.upcase}"
+    self.eyes = Applitools::Images::Eyes.new
+    eyes.api_key = ENV['APPLITOOLS_API_KEY']
+    #eyes.log_handler = Logger.new(STDOUT)
     prepare_test
   end
   
@@ -50,11 +55,15 @@ class VideoApplitoolsTester
   
   def convert_video_to_frames
     #http://www.bugcodemaster.com/article/extract-images-frame-frame-video-file-using-ffmpeg
-    %x(ffmpeg -i #{filename} -vf \"select=eq(pict_type\\,I)" -vsync vfr #{frame_dir}/out-%03d.jpg -hide_banner)
+    %x(ffmpeg -i #{filename} -vf \"select=eq(pict_type\\,I)" -vsync vfr #{frame_dir}/out-%03d.png -hide_banner)
   end
   
   def upload_to_applitools
-    %x(java -jar #{image_tester_binary} -k #{api_key} -bn #{app_name} -a #{app_name} -ap #{test_name} -f #{frame_dir})
+    eyes.test(app_name: app_name, test_name: test_name) do
+      files = Dir.glob("#{frame_dir}/*.png")
+      puts "My Files: #{files}"
+      files.each { |file| eyes.check_image(image_path: file, tag: file) }
+    end
   end
   
   def run_test
@@ -72,11 +81,11 @@ class VideoApplitoolsTester
   end
 end
 
-if [ARGV[0], ARGV[1], ARGV[2], ARGV[3]].include? nil
+if [ARGV[0], ARGV[1], ARGV[2]].include? nil
   puts "Run Example: ruby video_to_image.rb '/path/to/ImageTester.jar' 'https://applitools.com/images/videos/step2.mp4' 'Video Frames' 'Steps Example'"
   puts "Or..."
   puts "Run Example: ruby video_to_image.rb '/path/to/ImageTester.jar' '/path/to/video.mp4' 'Video Frames' 'Steps Example'\n"
 else
-  my_test = VideoApplitoolsTester.new(ARGV[0], ARGV[1], ARGV[2], ARGV[3])
+  my_test = VideoApplitoolsTester.new(ARGV[0], ARGV[1], ARGV[2])
   my_test.run_test
 end
