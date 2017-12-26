@@ -8,6 +8,7 @@ describe 'Testing Applitools' do
     @eyes.api_key = ENV['APPLITOOLS_API_KEY']
     @page_url = "https://applitools.com/"
     @driver.get @page_url
+    #Collect all video paths on a page.
     @videos = @driver.find_elements(:tag_name, "video").map { |v| v.attribute('innerHTML').strip.match(/images\/videos.*\" /)[0].strip.tr('"','') }
     @video_loc = "document.querySelector('video')"
   end
@@ -17,26 +18,26 @@ describe 'Testing Applitools' do
     @driver.quit
   end
   
-  before(:each) do
-    @driver.execute_script("document.querySelector('video').pause();")
-    @video_length = @driver.execute_script("var vid = #{@video_loc}; return vid.duration;")
-    @playback_rate = @driver.execute_script("var vid = #{@video_loc}; return vid.defaultPlaybackRate;")
-    @auto_play_bool = @driver.execute_script("var vid = #{@video_loc}; return vid.autoplay;")
-  end
-
   it 'Visual Validate Videos' do |example|
     @eyes.open(driver: @driver, app_name: "Applitools Example Videos", test_name: example.description, viewport_size: { width: 1350, height: 800 })
     @videos.each do |video|
       puts "Navigating to: #{@page_url}#{video}"
       @driver.get "#{@page_url}#{video}"
-      puts "set to first frame."
+      
+      #pause video and get details
+      @driver.execute_script("document.querySelector('video').pause();")
+      video_length = @driver.execute_script("var vid = #{@video_loc}; return vid.duration;")
+      @playback_rate = @driver.execute_script("var vid = #{@video_loc}; return vid.defaultPlaybackRate;")
+      @auto_play_bool = @driver.execute_script("var vid = #{@video_loc}; return vid.autoplay;")
+      
+      puts "Set #{video} to first frame."
       @driver.execute_script("var vid = #{@video_loc}; vid.currentTime = 0;")
       @eyes.check_region(:css, 'video', tag: "#{video} First Frame")
-      puts "set to middle frame."
-      @driver.execute_script("var vid = #{@video_loc}; vid.currentTime = #{@video_length / 2};")
+      puts "Set #{video} to middle frame."
+      @driver.execute_script("var vid = #{@video_loc}; vid.currentTime = #{video_length / 2};")
       @eyes.check_region(:css, 'video', tag: "#{video} Middle Frame")
-      puts "set to last frame."
-      @driver.execute_script("var vid = #{@video_loc}; vid.currentTime = #{@video_length};")
+      puts "Set #{video} to last frame."
+      @driver.execute_script("var vid = #{@video_loc}; vid.currentTime = #{video_length};")
       @eyes.check_region(:css, 'video', tag: "#{video} Last Frame")
     end
     results = @eyes.close(false)
