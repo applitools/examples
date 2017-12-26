@@ -5,7 +5,7 @@ describe 'Testing Applitools' do
   before(:all) do |e|
     @driver = Selenium::WebDriver.for :chrome
     @eyes = Applitools::Selenium::Eyes.new
-    @eyes.api_key = ENV['APPLITOOLS_KEY']
+    @eyes.api_key = ENV['APPLITOOLS_API_KEY']
     @driver.get 'https://applitools.com/images/videos/step2.mp4'
     @video_loc = "document.querySelector('video')"
   end

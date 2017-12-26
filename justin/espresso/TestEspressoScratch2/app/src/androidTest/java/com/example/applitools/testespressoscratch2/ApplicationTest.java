@@ -27,7 +27,7 @@ public class ApplicationTest  {
 
         // Initialize the eyes SDK and set your private API key.
         Eyes eyes = new Eyes();
-        eyes.setApiKey("your-applitools-key");
+        eyes.setApiKey("9RkMajXrzS1Zu110oTWQps102CHiPRPmeyND99E9iL0G7yAc110");
         eyes.setForceFullPageScreenshot(true);
         eyes.setMatchLevel(STRICT);
         eyes.addProperty("environment", "qa");
@@ -40,7 +40,7 @@ public class ApplicationTest  {
         try {
 
             // Start the test.
-            eyes.open("Another Espresso Test");
+            eyes.open("Application Test", "Another Espresso Test");
 
             eyes.checkWindow("Home View");
 
