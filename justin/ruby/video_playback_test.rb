@@ -27,9 +27,9 @@ describe 'Testing Applitools' do
       #pause video and get details
       @driver.execute_script("document.querySelector('video').pause();")
       video_length = @driver.execute_script("var vid = #{@video_loc}; return vid.duration;")
-      @playback_rate = @driver.execute_script("var vid = #{@video_loc}; return vid.defaultPlaybackRate;")
-      @auto_play_bool = @driver.execute_script("var vid = #{@video_loc}; return vid.autoplay;")
-      
+      playback_rate = @driver.execute_script("var vid = #{@video_loc}; return vid.defaultPlaybackRate;")
+      auto_play_bool = @driver.execute_script("var vid = #{@video_loc}; return vid.autoplay;")
+            
       puts "Set #{video} to first frame."
       @driver.execute_script("var vid = #{@video_loc}; vid.currentTime = 0;")
       @eyes.check_region(:css, 'video', tag: "#{video} First Frame")
@@ -39,10 +39,11 @@ describe 'Testing Applitools' do
       puts "Set #{video} to last frame."
       @driver.execute_script("var vid = #{@video_loc}; vid.currentTime = #{video_length};")
       @eyes.check_region(:css, 'video', tag: "#{video} Last Frame")
+      
+      expect(playback_rate).to eq 1
+      expect(auto_play_bool).to eq true
     end
     results = @eyes.close(false)
-    expect(@playback_rate).to eq 1
-    expect(@auto_play_bool).to eq true
     expect(results.passed?).to eq true
   end
 end
