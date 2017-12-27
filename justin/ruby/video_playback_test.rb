@@ -3,7 +3,7 @@ require 'eyes_selenium'
 describe 'Testing Applitools' do
 
   before(:all) do |e|
-    @driver = Selenium::WebDriver.for :firefox
+    @driver = Selenium::WebDriver.for :chrome
     @eyes = Applitools::Selenium::Eyes.new
     @eyes.api_key = ENV['APPLITOOLS_API_KEY']
     @page_url = "https://applitools.com/"
