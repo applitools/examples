@@ -2,6 +2,7 @@ package com.example.applitools.testespressoscratch2;
 
 import android.support.test.rule.ActivityTestRule;
 
+import com.applitools.eyes.android.common.logger.StdoutLogHandler;
 import com.applitools.eyes.android.espresso.Eyes;
 
 import org.junit.Rule;
@@ -35,7 +36,7 @@ public class ApplicationTest  {
         //eyes.setBranchName("qa");
         //eyes.setParentBranchName("dev");
         //eyes.setBatch();
-
+        eyes.setLogHandler(new StdoutLogHandler());
 
         try {
 
