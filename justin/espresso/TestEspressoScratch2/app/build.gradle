@@ -30,15 +30,16 @@ dependencies {
             'com.applitools:eyes-android-espresso:1.+@aar',
             'com.applitools:eyes-android-common:1.+',
             'com.applitools:eyes-android-core:1.+',
-            'com.android.support:support-annotations:25.+',
+            'com.android.support:support-annotations:26.+',
             'com.android.support.test:rules:0.5',
             'com.android.support.test:runner:0.5')
 
-    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support:recyclerview-v7:26.+'
 }
 
 configurations.all {
-    resolutionStrategy.force 'com.android.support:support-annotations:25.+'
+    resolutionStrategy.force 'com.android.support:support-annotations:26.+'
     resolutionStrategy.force 'com.squareup.okio:okio:1.3.0'
 }
 

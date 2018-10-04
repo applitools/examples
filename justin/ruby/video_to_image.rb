@@ -2,6 +2,7 @@ require "httparty"
 require 'fileutils'
 require 'eyes_images'
 require 'openssl'
+require 'parallel'
 OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
 class VideoApplitoolsTester
@@ -17,7 +18,9 @@ class VideoApplitoolsTester
     self.frame_dir           = "#{Dir.pwd}/TEST-#{filename.upcase}"
     self.eyes                = Applitools::Images::Eyes.new
     eyes.api_key             = ENV['APPLITOOLS_API_KEY']
-    #eyes.log_handler        = Logger.new(STDOUT)
+    batch                    = Applitools::BatchInfo.new(filename)
+    eyes.batch               = batch
+    eyes.log_handler         = Logger.new(STDOUT)
     prepare_test
   end
   
@@ -59,10 +62,12 @@ class VideoApplitoolsTester
   end
   
   def upload_to_applitools
-    eyes.test(app_name: app_name, test_name: test_name) do
-      files = Dir.glob("#{frame_dir}/*.png")
-      puts "\nMy Images: #{files}\n"
-      files.each { |file| eyes.check_image(image_path: file, tag: File.basename(file)) }
+    files = Dir.glob("#{frame_dir}/*.png").sort
+    puts "\nMy Images: #{files}\n"
+    Parallel.map(files, in_processes: 4) do |file|
+      eyes.test(app_name: app_name, test_name: File.basename(file)) do
+        eyes.check_image(image_path: file, tag: File.basename(file))
+      end
     end
   end
   

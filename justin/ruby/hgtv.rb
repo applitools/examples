@@ -1,7 +1,7 @@
 require 'eyes_selenium'
 
 describe 'Testing HGTV' do
-
+     
   before(:all) do |e|
     @driver = Selenium::WebDriver.for :firefox
     @wait = Selenium::WebDriver::Wait.new(:timeout => 15)
