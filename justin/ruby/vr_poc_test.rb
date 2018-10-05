@@ -37,10 +37,7 @@ describe 'Testing Applitools VR' do
   after(:all) { driver.quit }
 
   it 'Horizontal VR Rotation' do |example|
-   eyes_driver = eyes.open(driver: driver, app_name: app_name, test_name: example.description, viewport_size: viewport)
-   
-   sleep 30
-   
+   eyes_driver = eyes.open(driver: driver, app_name: app_name, test_name: example.description, viewport_size: viewport)   
    capture_region = eyes_driver.find_element(canvas_locator)
    rotate_left = [0, 104.99999, 104.99999, 104.99999, 104.99999, 104.99999]
    rotate_left.each do |rotate|
