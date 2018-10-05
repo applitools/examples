@@ -16,8 +16,6 @@ describe 'Testing Applitools VR' do
     self.eyes = Applitools::Selenium::Eyes.new
     eyes.api_key = ENV['APPLITOOLS_API_KEY']
     eyes.log_handler = Logger.new(STDOUT)
-    eyes.match_level = :strict #:content
-    eyes.force_full_page_screenshot = true
     eyes.stitch_mode = :CSS
     eyes.hide_scrollbars = true
     eyes.batch  = Applitools::BatchInfo.new("WebVR Rotation Tests")
